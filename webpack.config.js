@@ -38,7 +38,7 @@ module.exports = {
            test: /\.(png|woff|eot|ttf|swf)/, loader: 'file-loader?name=[name].[ext]'
        },
        {
-           test: /\.svg/, loader: 'file-loader'
+           test: /\.svg/, loader: 'file-loader?name=[name].[ext]'
        },
        {
            test: /\.html/, loader: 'html?minimize=false'

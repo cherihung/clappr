@@ -158,9 +158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _pluginsLog2 = _interopRequireDefault(_pluginsLog);
 
-	window.DEBUG = false;
-
-	var version = ("0.2.8");
+	var version = ("0.2.10");
 
 	exports['default'] = {
 	    Player: _componentsPlayer2['default'],
@@ -225,6 +223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _baseEvents2 = _interopRequireDefault(_baseEvents);
 
 	var _componentsCore_factory = __webpack_require__(11);
+<<<<<<< HEAD
 
 	var _componentsCore_factory2 = _interopRequireDefault(_componentsCore_factory);
 
@@ -236,6 +235,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _componentsPlayer_info2 = _interopRequireDefault(_componentsPlayer_info);
 
+=======
+
+	var _componentsCore_factory2 = _interopRequireDefault(_componentsCore_factory);
+
+	var _componentsLoader = __webpack_require__(72);
+
+	var _componentsLoader2 = _interopRequireDefault(_componentsLoader);
+
+	var _componentsPlayer_info = __webpack_require__(65);
+
+	var _componentsPlayer_info2 = _interopRequireDefault(_componentsPlayer_info);
+
+>>>>>>> master-upstream
 	var _lodashAssign = __webpack_require__(21);
 
 	var _lodashAssign2 = _interopRequireDefault(_lodashAssign);
@@ -1278,6 +1290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @param {Number} duration the total duration (in seconds)
 	 */
 	Events.PLAYER_TIMEUPDATE = 'timeupdate';
+<<<<<<< HEAD
 
 	// Playback Events
 	Events.PLAYBACK_PROGRESS = 'playback:progress';
@@ -1407,6 +1420,137 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.offLevel = offLevel;
 	  }
 
+=======
+
+	// Playback Events
+	Events.PLAYBACK_PROGRESS = 'playback:progress';
+	Events.PLAYBACK_TIMEUPDATE = 'playback:timeupdate';
+	Events.PLAYBACK_READY = 'playback:ready';
+	Events.PLAYBACK_BUFFERING = 'playback:buffering';
+	Events.PLAYBACK_BUFFERFULL = 'playback:bufferfull';
+	Events.PLAYBACK_SETTINGSUPDATE = 'playback:settingsupdate';
+	Events.PLAYBACK_LOADEDMETADATA = 'playback:loadedmetadata';
+	Events.PLAYBACK_HIGHDEFINITIONUPDATE = 'playback:highdefinitionupdate';
+	Events.PLAYBACK_BITRATE = 'playback:bitrate';
+	Events.PLAYBACK_PLAYBACKSTATE = 'playback:playbackstate';
+	Events.PLAYBACK_DVR = 'playback:dvr';
+	Events.PLAYBACK_MEDIACONTROL_DISABLE = 'playback:mediacontrol:disable';
+	Events.PLAYBACK_MEDIACONTROL_ENABLE = 'playback:mediacontrol:enable';
+	Events.PLAYBACK_ENDED = 'playback:ended';
+	Events.PLAYBACK_PLAY = 'playback:play';
+	Events.PLAYBACK_PAUSE = 'playback:pause';
+	Events.PLAYBACK_ERROR = 'playback:error';
+	Events.PLAYBACK_STATS_ADD = 'playback:stats:add';
+	Events.PLAYBACK_FRAGMENT_LOADED = 'playback:fragment:loaded';
+
+	// Container Events
+	Events.CONTAINER_PLAYBACKSTATE = 'container:playbackstate';
+	Events.CONTAINER_PLAYBACKDVRSTATECHANGED = 'container:dvr';
+	Events.CONTAINER_BITRATE = 'container:bitrate';
+	Events.CONTAINER_STATS_REPORT = 'container:stats:report';
+	Events.CONTAINER_DESTROYED = 'container:destroyed';
+	Events.CONTAINER_READY = 'container:ready';
+	Events.CONTAINER_ERROR = 'container:error';
+	Events.CONTAINER_LOADEDMETADATA = 'container:loadedmetadata';
+	Events.CONTAINER_TIMEUPDATE = 'container:timeupdate';
+	Events.CONTAINER_PROGRESS = 'container:progress';
+	Events.CONTAINER_PLAY = 'container:play';
+	Events.CONTAINER_STOP = 'container:stop';
+	Events.CONTAINER_PAUSE = 'container:pause';
+	Events.CONTAINER_ENDED = 'container:ended';
+	Events.CONTAINER_CLICK = 'container:click';
+	Events.CONTAINER_DBLCLICK = 'container:dblclick';
+	Events.CONTAINER_MOUSE_ENTER = 'container:mouseenter';
+	Events.CONTAINER_MOUSE_LEAVE = 'container:mouseleave';
+	Events.CONTAINER_SEEK = 'container:seek';
+	Events.CONTAINER_VOLUME = 'container:volume';
+	Events.CONTAINER_FULLSCREEN = 'container:fullscreen';
+	Events.CONTAINER_STATE_BUFFERING = 'container:state:buffering';
+	Events.CONTAINER_STATE_BUFFERFULL = 'container:state:bufferfull';
+	Events.CONTAINER_SETTINGSUPDATE = 'container:settingsupdate';
+	Events.CONTAINER_HIGHDEFINITIONUPDATE = 'container:highdefinitionupdate';
+	Events.CONTAINER_MEDIACONTROL_DISABLE = 'container:mediacontrol:disable';
+	Events.CONTAINER_MEDIACONTROL_ENABLE = 'container:mediacontrol:enable';
+	Events.CONTAINER_STATS_ADD = 'container:stats:add';
+
+	// MediaControl Events
+	Events.MEDIACONTROL_RENDERED = 'mediacontrol:rendered';
+	Events.MEDIACONTROL_FULLSCREEN = 'mediacontrol:fullscreen';
+	Events.MEDIACONTROL_SHOW = 'mediacontrol:show';
+	Events.MEDIACONTROL_HIDE = 'mediacontrol:hide';
+	Events.MEDIACONTROL_MOUSEMOVE_SEEKBAR = 'mediacontrol:mousemove:seekbar';
+	Events.MEDIACONTROL_MOUSELEAVE_SEEKBAR = 'mediacontrol:mouseleave:seekbar';
+	Events.MEDIACONTROL_PLAYING = 'mediacontrol:playing';
+	Events.MEDIACONTROL_NOTPLAYING = 'mediacontrol:notplaying';
+	Events.MEDIACONTROL_CONTAINERCHANGED = 'mediacontrol:containerchanged';
+	module.exports = exports['default'];
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = __webpack_require__(7);
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	// Use of this source code is governed by a BSD-style
+	// license that can be found in the LICENSE file.
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var _baseKibo = __webpack_require__(8);
+
+	var _baseKibo2 = _interopRequireDefault(_baseKibo);
+
+	var BOLD = 'font-weight: bold; font-size: 13px;';
+	var INFO = 'color: #006600;' + BOLD;
+	var DEBUG = 'color: #0000ff;' + BOLD;
+	var WARN = 'color: #ff8000;' + BOLD;
+	var ERROR = 'color: #ff0000;' + BOLD;
+
+	var LEVEL_DEBUG = 0;
+	var LEVEL_INFO = 1;
+	var LEVEL_WARN = 2;
+	var LEVEL_ERROR = 3;
+	var LEVEL_DISABLED = 4;
+
+	var COLORS = [DEBUG, INFO, WARN, ERROR, ERROR];
+	var DESCRIPTIONS = ['debug', 'info', 'warn', 'error', 'disabled'];
+
+	var Log = (function () {
+	  function Log() {
+	    var _this = this;
+
+	    var level = arguments.length <= 0 || arguments[0] === undefined ? LEVEL_INFO : arguments[0];
+	    var offLevel = arguments.length <= 1 || arguments[1] === undefined ? LEVEL_DISABLED : arguments[1];
+
+	    _classCallCheck(this, Log);
+
+	    this.kibo = new _baseKibo2['default']();
+	    this.kibo.down(['ctrl shift d'], function () {
+	      return _this.onOff();
+	    });
+	    this.BLACKLIST = ['timeupdate', 'playback:timeupdate', 'playback:progress', 'container:hover', 'container:timeupdate', 'container:progress'];
+	    this.level = level;
+	    this.offLevel = offLevel;
+	  }
+
+>>>>>>> master-upstream
 	  _createClass(Log, [{
 	    key: 'debug',
 	    value: function debug(klass) {
@@ -1436,7 +1580,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.previousLevel = this.level;
 	        this.level = this.offLevel;
 	      }
+<<<<<<< HEAD
 	      console.log.apply(console, ["%c[Clappr.Log] set log level to " + DESCRIPTIONS[this.level], ERROR]);
+=======
+	      // handle instances where console.log is unavailable
+	      if (window.console && console.log) {
+	        console.log("%c[Clappr.Log] set log level to " + DESCRIPTIONS[this.level], WARN);
+	      }
+>>>>>>> master-upstream
 	    }
 	  }, {
 	    key: 'level',
@@ -1458,7 +1609,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (klass) {
 	        klassDescription = "[" + klass + "]";
 	      }
+<<<<<<< HEAD
 	      console.log.apply(console, ["%c[" + DESCRIPTIONS[level] + "]" + klassDescription, color].concat(message));
+=======
+	      if (window.console && console.log) {
+	        console.log.apply(console, ["%c[" + DESCRIPTIONS[level] + "]" + klassDescription, color].concat(message));
+	      }
+>>>>>>> master-upstream
 	    }
 	  }]);
 
@@ -1475,7 +1632,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	Log.getInstance = function () {
 	  if (this._instance === undefined) {
 	    this._instance = new this();
+<<<<<<< HEAD
 	    this._instance.onOff();
+=======
+	    this._instance.previousLevel = this._instance.level;
+	    this._instance.level = this._instance.offLevel;
+>>>>>>> master-upstream
 	  }
 	  return this._instance;
 	};
@@ -1486,10 +1648,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Log.debug = function (klass) {
 	  this.getInstance().debug.apply(this.getInstance(), arguments);
+<<<<<<< HEAD
 	};
 	Log.info = function (klass) {
 	  this.getInstance().info.apply(this.getInstance(), arguments);
 	};
+=======
+	};
+	Log.info = function (klass) {
+	  this.getInstance().info.apply(this.getInstance(), arguments);
+	};
+>>>>>>> master-upstream
 	Log.warn = function (klass) {
 	  this.getInstance().warn.apply(this.getInstance(), arguments);
 	};
@@ -1886,9 +2055,30 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _componentsCore2 = _interopRequireDefault(_componentsCore);
 
+<<<<<<< HEAD
 	var CoreFactory = (function (_BaseObject) {
 	  _inherits(CoreFactory, _BaseObject);
 
+=======
+	/**
+	 * The Core Factory is responsible for instantiate the core and it's plugins.
+	 * @class CoreFactory
+	 * @constructor
+	 * @extends BaseObject
+	 * @module components
+	 */
+
+	var CoreFactory = (function (_BaseObject) {
+	  _inherits(CoreFactory, _BaseObject);
+
+	  /**
+	   * it builds the core factory
+	   * @method constructor
+	   * @param {Player} player the player object
+	   * @param {Loader} loader the loader object
+	   */
+
+>>>>>>> master-upstream
 	  function CoreFactory(player, loader) {
 	    _classCallCheck(this, CoreFactory);
 
@@ -1899,6 +2089,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.options.loader = this.loader;
 	  }
 
+<<<<<<< HEAD
 	  _createClass(CoreFactory, [{
 	    key: 'create',
 	    value: function create() {
@@ -1931,6 +2122,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return CoreFactory;
 	})(_baseBase_object2['default']);
 
+=======
+	  /**
+	   * creates a core and its plugins
+	   * @method create
+	   * @return {Core} created core
+	   */
+
+	  _createClass(CoreFactory, [{
+	    key: 'create',
+	    value: function create() {
+	      this.core = new _componentsCore2['default'](this.options);
+	      this.core.then(this.addCorePlugins.bind(this));
+	      return this.core;
+	    }
+
+	    /**
+	     * given the core plugins (`loader.corePlugins`) it builds each one
+	     * @method addCorePlugins
+	     * @return {Core} the core with all plugins
+	     */
+	  }, {
+	    key: 'addCorePlugins',
+	    value: function addCorePlugins() {
+	      var _this = this;
+
+	      this.loader.corePlugins.forEach(function (Plugin) {
+	        var plugin = new Plugin(_this.core);
+	        _this.core.addPlugin(plugin);
+	        _this.setupExternalInterface(plugin);
+	      });
+	      return this.core;
+	    }
+	  }, {
+	    key: 'setupExternalInterface',
+	    value: function setupExternalInterface(plugin) {
+	      var externalFunctions = plugin.getExternalInterface();
+	      for (var key in externalFunctions) {
+	        this.player[key] = externalFunctions[key].bind(plugin);
+	      }
+	    }
+	  }]);
+
+	  return CoreFactory;
+	})(_baseBase_object2['default']);
+
+>>>>>>> master-upstream
 	exports['default'] = CoreFactory;
 	module.exports = exports['default'];
 
@@ -1972,6 +2209,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _baseUtils = __webpack_require__(2);
+<<<<<<< HEAD
 
 	var _baseEvents = __webpack_require__(5);
 
@@ -2021,6 +2259,66 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _publicStyleScss2 = _interopRequireDefault(_publicStyleScss);
 
+=======
+
+	var _baseEvents = __webpack_require__(5);
+
+	var _baseEvents2 = _interopRequireDefault(_baseEvents);
+
+	var _baseStyler = __webpack_require__(15);
+
+	var _baseStyler2 = _interopRequireDefault(_baseStyler);
+
+	var _baseUi_object = __webpack_require__(18);
+
+	var _baseUi_object2 = _interopRequireDefault(_baseUi_object);
+
+	var _componentsBrowser = __webpack_require__(3);
+
+	var _componentsBrowser2 = _interopRequireDefault(_componentsBrowser);
+
+	var _componentsContainer_factory = __webpack_require__(32);
+
+	var _componentsContainer_factory2 = _interopRequireDefault(_componentsContainer_factory);
+
+	var _componentsMedia_control = __webpack_require__(58);
+
+	var _componentsMedia_control2 = _interopRequireDefault(_componentsMedia_control);
+
+	var _componentsMediator = __webpack_require__(64);
+
+	var _componentsMediator2 = _interopRequireDefault(_componentsMediator);
+
+	var _componentsPlayer_info = __webpack_require__(65);
+
+	var _componentsPlayer_info2 = _interopRequireDefault(_componentsPlayer_info);
+
+	var _lodashAssign = __webpack_require__(21);
+
+	var _lodashAssign2 = _interopRequireDefault(_lodashAssign);
+
+	var _lodashFind = __webpack_require__(38);
+
+	var _lodashFind2 = _interopRequireDefault(_lodashFind);
+
+	var _clapprZepto = __webpack_require__(16);
+
+	var _clapprZepto2 = _interopRequireDefault(_clapprZepto);
+
+	var _publicStyleScss = __webpack_require__(71);
+
+	var _publicStyleScss2 = _interopRequireDefault(_publicStyleScss);
+
+	/**
+	 * The Core is responsible to manage Containers, the mediator, MediaControl
+	 * and the player state.
+	 * @class Core
+	 * @constructor
+	 * @extends UIObject
+	 * @module components
+	 */
+
+>>>>>>> master-upstream
 	var Core = (function (_UIObject) {
 	  _inherits(Core, _UIObject);
 
@@ -2148,6 +2446,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'resolveOnContainersReady',
 	    value: function resolveOnContainersReady(containers) {
 	      var _this4 = this;
+<<<<<<< HEAD
 
 	      _clapprZepto2['default'].when.apply(_clapprZepto2['default'], containers).done(function () {
 	        return _this4.defer.resolve(_this4);
@@ -2175,6 +2474,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function load(sources, mimeType) {
 	      var _this5 = this;
 
+=======
+
+	      _clapprZepto2['default'].when.apply(_clapprZepto2['default'], containers).done(function () {
+	        return _this4.defer.resolve(_this4);
+	      });
+	    }
+	  }, {
+	    key: 'addPlugin',
+	    value: function addPlugin(plugin) {
+	      this.plugins.push(plugin);
+	    }
+	  }, {
+	    key: 'hasPlugin',
+	    value: function hasPlugin(name) {
+	      return !!this.getPlugin(name);
+	    }
+	  }, {
+	    key: 'getPlugin',
+	    value: function getPlugin(name) {
+	      return (0, _lodashFind2['default'])(this.plugins, function (plugin) {
+	        return plugin.name === name;
+	      });
+	    }
+	  }, {
+	    key: 'load',
+	    value: function load(sources, mimeType) {
+	      var _this5 = this;
+
+>>>>>>> master-upstream
 	      this.options.mimeType = mimeType;
 	      sources = sources && sources.constructor === Array ? sources : [sources.toString()];
 	      this.containers.forEach(function (container) {
@@ -2285,6 +2613,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.mediaControl.container;
 	    }
 	  }, {
+<<<<<<< HEAD
+=======
+	    key: 'getCurrentPlayback',
+	    value: function getCurrentPlayback() {
+	      return this.getCurrentContainer().playback;
+	    }
+	  }, {
+>>>>>>> master-upstream
 	    key: 'getPlaybackType',
 	    value: function getPlaybackType() {
 	      return this.getCurrentContainer().getPlaybackType();
@@ -2370,6 +2706,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _clapprZepto2 = _interopRequireDefault(_clapprZepto);
 
 	var _template = __webpack_require__(17);
+<<<<<<< HEAD
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -2381,6 +2718,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 
+=======
+
+	var _template2 = _interopRequireDefault(_template);
+
+	var Styler = {
+	  getStyleFor: function getStyleFor(style) {
+	    var options = arguments.length <= 1 || arguments[1] === undefined ? { baseUrl: '' } : arguments[1];
+
+	    return (0, _clapprZepto2['default'])('<style class="clappr-style"></style>').html((0, _template2['default'])(style.toString())(options));
+	  }
+	};
+
+>>>>>>> master-upstream
 	exports['default'] = Styler;
 	module.exports = exports['default'];
 
@@ -2744,6 +3094,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	              o = Y(this, t, e, r);o.split(/\s+/g).forEach(function (t) {
 	            n(this).hasClass(t) || i.push(t);
 	          }, this), i.length && G(this, r + (r ? " " : "") + i.join(" "));
+<<<<<<< HEAD
 	        }
 	      }) : this;
 	    }, removeClass: function removeClass(e) {
@@ -2753,6 +3104,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	            i = i.replace(H(t), " ");
 	          }), G(this, i.trim());
 	        }
+=======
+	        }
+	      }) : this;
+	    }, removeClass: function removeClass(e) {
+	      return this.each(function (n) {
+	        if ("className" in this) {
+	          if (e === t) return G(this, "");i = G(this), Y(this, e, n, i).split(/\s+/g).forEach(function (t) {
+	            i = i.replace(H(t), " ");
+	          }), G(this, i.trim());
+	        }
+>>>>>>> master-upstream
 	      });
 	    }, toggleClass: function toggleClass(e, i) {
 	      return e ? this.each(function (r) {
@@ -3417,7 +3779,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @constructor
 	 * @extends BaseObject
 	 * @module base
+<<<<<<< HEAD
 	 * @since 1.0.0
+=======
+>>>>>>> master-upstream
 	 */
 
 	var UIObject = (function (_BaseObject) {
@@ -4289,6 +4654,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ },
 /* 26 */
 /***/ function(module, exports) {
+<<<<<<< HEAD
 
 	/**
 	 * lodash 3.0.4 (Custom Build) <https://lodash.com/>
@@ -4300,6 +4666,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	/**
+=======
+
+	/**
+	 * lodash 3.0.4 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+
+	/**
+>>>>>>> master-upstream
 	 * Checks if `value` is object-like.
 	 *
 	 * @private
@@ -4470,6 +4849,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var value = object == null ? undefined : object[key];
 	  return isNative(value) ? value : undefined;
 	}
+<<<<<<< HEAD
+
+	/**
+	 * Checks if `value` is a valid array-like length.
+	 *
+	 * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+	 */
+	function isLength(value) {
+	  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+	}
+
+	/**
+	 * Checks if `value` is classified as an `Array` object.
+=======
 
 	/**
 	 * Checks if `value` is a valid array-like length.
@@ -4506,11 +4903,52 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Checks if `value` is classified as a `Function` object.
+>>>>>>> master-upstream
 	 *
 	 * @static
 	 * @memberOf _
 	 * @category Lang
 	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+	 * @example
+	 *
+<<<<<<< HEAD
+	 * _.isArray([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArray(function() { return arguments; }());
+	 * // => false
+	 */
+	var isArray = nativeIsArray || function (value) {
+	  return isObjectLike(value) && isLength(value.length) && objToString.call(value) == arrayTag;
+	};
+
+	/**
+	 * Checks if `value` is classified as a `Function` object.
+=======
+	 * _.isFunction(_);
+	 * // => true
+	 *
+	 * _.isFunction(/abc/);
+	 * // => false
+	 */
+	function isFunction(value) {
+	  // The use of `Object#toString` avoids issues with the `typeof` operator
+	  // in older versions of Chrome and Safari which return 'function' for regexes
+	  // and Safari 8 equivalents which return 'object' for typed array constructors.
+	  return isObject(value) && objToString.call(value) == funcTag;
+	}
+
+	/**
+	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
+	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+>>>>>>> master-upstream
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+<<<<<<< HEAD
 	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
 	 * @example
 	 *
@@ -4530,11 +4968,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
 	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+=======
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(1);
+	 * // => false
+	 */
+	function isObject(value) {
+	  // Avoid a V8 JIT bug in Chrome 19-20.
+	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+
+	/**
+	 * Checks if `value` is a native function.
+>>>>>>> master-upstream
 	 *
 	 * @static
 	 * @memberOf _
 	 * @category Lang
 	 * @param {*} value The value to check.
+<<<<<<< HEAD
 	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
 	 * @example
 	 *
@@ -4618,6 +5080,65 @@ return /******/ (function(modules) { // webpackBootstrap
 	        guard = length > 2 ? sources[2] : undefined,
 	        thisArg = length > 1 ? sources[length - 1] : undefined;
 
+=======
+	 * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
+	 * @example
+	 *
+	 * _.isNative(Array.prototype.push);
+	 * // => true
+	 *
+	 * _.isNative(_);
+	 * // => false
+	 */
+	function isNative(value) {
+	  if (value == null) {
+	    return false;
+	  }
+	  if (isFunction(value)) {
+	    return reIsNative.test(fnToString.call(value));
+	  }
+	  return isObjectLike(value) && reIsHostCtor.test(value);
+	}
+
+	module.exports = isArray;
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * lodash 3.1.1 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+	'use strict';
+
+	var bindCallback = __webpack_require__(29),
+	    isIterateeCall = __webpack_require__(30),
+	    restParam = __webpack_require__(31);
+
+	/**
+	 * Creates a function that assigns properties of source object(s) to a given
+	 * destination object.
+	 *
+	 * **Note:** This function is used to create `_.assign`, `_.defaults`, and `_.merge`.
+	 *
+	 * @private
+	 * @param {Function} assigner The function to assign values.
+	 * @returns {Function} Returns the new assigner function.
+	 */
+	function createAssigner(assigner) {
+	  return restParam(function (object, sources) {
+	    var index = -1,
+	        length = object == null ? 0 : sources.length,
+	        customizer = length > 2 ? sources[length - 2] : undefined,
+	        guard = length > 2 ? sources[2] : undefined,
+	        thisArg = length > 1 ? sources[length - 1] : undefined;
+
+>>>>>>> master-upstream
 	    if (typeof customizer == 'function') {
 	      customizer = bindCallback(customizer, thisArg, 5);
 	      length -= 2;
@@ -4628,6 +5149,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
 	      customizer = length < 3 ? undefined : customizer;
 	      length = 1;
+<<<<<<< HEAD
 	    }
 	    while (++index < length) {
 	      var source = sources[index];
@@ -4635,6 +5157,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        assigner(object, source, customizer);
 	      }
 	    }
+=======
+	    }
+	    while (++index < length) {
+	      var source = sources[index];
+	      if (source) {
+	        assigner(object, source, customizer);
+	      }
+	    }
+>>>>>>> master-upstream
 	    return object;
 	  });
 	}
@@ -4756,6 +5287,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Gets the "length" property value of `object`.
+<<<<<<< HEAD
 	 *
 	 * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
 	 * that affects Safari on at least iOS 8.1-8.3 ARM64.
@@ -4828,11 +5360,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
 	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+=======
+>>>>>>> master-upstream
 	 *
-	 * @static
-	 * @memberOf _
-	 * @category Lang
+	 * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
+	 * that affects Safari on at least iOS 8.1-8.3 ARM64.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {*} Returns the "length" value.
+	 */
+	var getLength = baseProperty('length');
+
+	/**
+	 * Checks if `value` is array-like.
+	 *
+	 * @private
 	 * @param {*} value The value to check.
+<<<<<<< HEAD
 	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
 	 * @example
 	 *
@@ -4850,6 +5395,60 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
 	  var type = typeof value;
 	  return !!value && (type == 'object' || type == 'function');
+=======
+	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+	 */
+	function isArrayLike(value) {
+	  return value != null && isLength(getLength(value));
+	}
+
+	/**
+	 * Checks if `value` is a valid array-like index.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+	 * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+	 */
+	function isIndex(value, length) {
+	  value = typeof value == 'number' || reIsUint.test(value) ? +value : -1;
+	  length = length == null ? MAX_SAFE_INTEGER : length;
+	  return value > -1 && value % 1 == 0 && value < length;
+	}
+
+	/**
+	 * Checks if the provided arguments are from an iteratee call.
+	 *
+	 * @private
+	 * @param {*} value The potential iteratee value argument.
+	 * @param {*} index The potential iteratee index or key argument.
+	 * @param {*} object The potential iteratee object argument.
+	 * @returns {boolean} Returns `true` if the arguments are from an iteratee call, else `false`.
+	 */
+	function isIterateeCall(value, index, object) {
+	  if (!isObject(object)) {
+	    return false;
+	  }
+	  var type = typeof index;
+	  if (type == 'number' ? isArrayLike(object) && isIndex(index, object.length) : type == 'string' && index in object) {
+	    var other = object[index];
+	    return value === value ? value === other : other !== other;
+	  }
+	  return false;
+	}
+
+	/**
+	 * Checks if `value` is a valid array-like length.
+	 *
+	 * **Note:** This function is based on [`ToLength`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength).
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+	 */
+	function isLength(value) {
+	  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+>>>>>>> master-upstream
 	}
 
 	module.exports = isIterateeCall;
@@ -4929,6 +5528,86 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	}
 
+<<<<<<< HEAD
+=======
+	module.exports = isIterateeCall;
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	/**
+	 * lodash 3.6.1 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+
+	/** Used as the `TypeError` message for "Functions" methods. */
+	'use strict';
+
+	var FUNC_ERROR_TEXT = 'Expected a function';
+
+	/* Native method references for those with the same name as other `lodash` methods. */
+	var nativeMax = Math.max;
+
+	/**
+	 * Creates a function that invokes `func` with the `this` binding of the
+	 * created function and arguments from `start` and beyond provided as an array.
+	 *
+	 * **Note:** This method is based on the [rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Function
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @param {number} [start=func.length-1] The start position of the rest parameter.
+	 * @returns {Function} Returns the new function.
+	 * @example
+	 *
+	 * var say = _.restParam(function(what, names) {
+	 *   return what + ' ' + _.initial(names).join(', ') +
+	 *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
+	 * });
+	 *
+	 * say('hello', 'fred', 'barney', 'pebbles');
+	 * // => 'hello fred, barney, & pebbles'
+	 */
+	function restParam(func, start) {
+	  if (typeof func != 'function') {
+	    throw new TypeError(FUNC_ERROR_TEXT);
+	  }
+	  start = nativeMax(start === undefined ? func.length - 1 : +start || 0, 0);
+	  return function () {
+	    var args = arguments,
+	        index = -1,
+	        length = nativeMax(args.length - start, 0),
+	        rest = Array(length);
+
+	    while (++index < length) {
+	      rest[index] = args[start + index];
+	    }
+	    switch (start) {
+	      case 0:
+	        return func.call(this, rest);
+	      case 1:
+	        return func.call(this, args[0], rest);
+	      case 2:
+	        return func.call(this, args[0], args[1], rest);
+	    }
+	    var otherArgs = Array(start + 1);
+	    index = -1;
+	    while (++index < start) {
+	      otherArgs[index] = args[index];
+	    }
+	    otherArgs[start] = rest;
+	    return func.apply(this, otherArgs);
+	  };
+	}
+
+>>>>>>> master-upstream
 	module.exports = restParam;
 
 /***/ },
@@ -5112,11 +5791,27 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _lodashFind2 = _interopRequireDefault(_lodashFind);
 
+	/**
+	 * An abstraction to represent a container for a given playback
+	 * TODO: describe its responsabilities
+	 * @class Container
+	 * @constructor
+	 * @extends UIObject
+	 * @module base
+	 */
+
 	var Container = (function (_UIObject) {
 	  _inherits(Container, _UIObject);
 
 	  _createClass(Container, [{
 	    key: 'name',
+
+	    /**
+	     * container's name
+	     * @method name
+	     * @default Container
+	     * @return {String} container's name
+	     */
 	    get: function get() {
 	      return 'Container';
 	    }
@@ -5136,6 +5831,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'mouseleave': 'mouseLeave'
 	      };
 	    }
+
+	    /**
+	     * it builds a container
+	     * @method constructor
+	     * @param {Object} options the options object
+	     */
 	  }]);
 
 	  function Container(options) {
@@ -5150,6 +5851,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.plugins = [this.playback];
 	    this.bindEvents();
 	  }
+
+	  /**
+	   * binds playback events to the methods of the container.
+	   * it listens to playback's events and triggers them as container events.
+	   *
+	   * | Playback |
+	   * |----------|
+	   * | progress |
+	   * | timeupdate |
+	   * | ready |
+	   * | buffering |
+	   * | bufferfull |
+	   * | settingsupdate |
+	   * | loadedmetadata |
+	   * | highdefinitionupdate |
+	   * | bitrate |
+	   * | playbackstate |
+	   * | dvr |
+	   * | mediacontrol_disable |
+	   * | mediacontrol_enable |
+	   * | ended |
+	   * | play |
+	   * | pause |
+	   * | error |
+	   *
+	   * ps: the events usually translate from PLABACK_x to CONTAINER_x, you can check all the events at `Event` class.
+	   *
+	   * @method bindEvents
+	   */
 
 	  _createClass(Container, [{
 	    key: 'bindEvents',
@@ -5199,16 +5929,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function getPlaybackType() {
 	      return this.playback.getPlaybackType();
 	    }
+
+	    /**
+	     * returns `true` if DVR is enable otherwise `false`.
+	     * @method isDvrEnabled
+	     * @return {Boolean}
+	     */
 	  }, {
 	    key: 'isDvrEnabled',
 	    value: function isDvrEnabled() {
 	      return !!this.playback.dvrEnabled;
 	    }
+
+	    /**
+	     * returns `true` if DVR is in use otherwise `false`.
+	     * @method isDvrInUse
+	     * @return {Boolean}
+	     */
 	  }, {
 	    key: 'isDvrInUse',
 	    value: function isDvrInUse() {
 	      return !!this.dvrInUse;
 	    }
+
+	    /**
+	     * destroys the container
+	     * @method destroy
+	     */
 	  }, {
 	    key: 'destroy',
 	    value: function destroy() {
@@ -5282,11 +6029,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function paused() {
 	      this.trigger(_baseEvents2['default'].CONTAINER_PAUSE, this.name);
 	    }
+
+	    /**
+	     * plays the playback
+	     * @method play
+	     */
 	  }, {
 	    key: 'play',
 	    value: function play() {
 	      this.playback.play();
 	    }
+
+	    /**
+	     * stops the playback
+	     * @method stop
+	     */
 	  }, {
 	    key: 'stop',
 	    value: function stop() {
@@ -5294,6 +6051,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.playback.stop();
 	      this.currentTime = 0;
 	    }
+
+	    /**
+	     * pauses the playback
+	     * @method pause
+	     */
 	  }, {
 	    key: 'pause',
 	    value: function pause() {
@@ -5342,22 +6104,50 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function bufferfull() {
 	      this.trigger(_baseEvents2['default'].CONTAINER_STATE_BUFFERFULL, this.name);
 	    }
+<<<<<<< HEAD
+=======
+
+	    /**
+	     * adds plugin to the container
+	     * @method addPlugin
+	     * @param {Object} plugin
+	     */
+>>>>>>> master-upstream
 	  }, {
 	    key: 'addPlugin',
 	    value: function addPlugin(plugin) {
 	      this.plugins.push(plugin);
 	    }
+<<<<<<< HEAD
+=======
+
+	    /**
+	     * checks if a plugin, given its name, exist
+	     * @method addPlugin
+	     * @param {String} name
+	     */
+>>>>>>> master-upstream
 	  }, {
 	    key: 'hasPlugin',
 	    value: function hasPlugin(name) {
 	      return !!this.getPlugin(name);
 	    }
+<<<<<<< HEAD
+=======
+
+	    /**
+	     * get the plugin given its name
+	     * @method getPlugin
+	     * @param {String} name
+	     */
+>>>>>>> master-upstream
 	  }, {
 	    key: 'getPlugin',
 	    value: function getPlugin(name) {
 	      return (0, _lodashFind2['default'])(this.plugins, function (plugin) {
 	        return plugin.name === name;
 	      });
+<<<<<<< HEAD
 	    }
 	  }, {
 	    key: 'mouseEnter',
@@ -5386,6 +6176,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.playback.isHighDefinitionInUse();
 	    }
 	  }, {
+=======
+	    }
+	  }, {
+	    key: 'mouseEnter',
+	    value: function mouseEnter() {
+	      this.trigger(_baseEvents2['default'].CONTAINER_MOUSE_ENTER);
+	    }
+	  }, {
+	    key: 'mouseLeave',
+	    value: function mouseLeave() {
+	      this.trigger(_baseEvents2['default'].CONTAINER_MOUSE_LEAVE);
+	    }
+	  }, {
+	    key: 'settingsUpdate',
+	    value: function settingsUpdate() {
+	      this.settings = this.playback.settings;
+	      this.trigger(_baseEvents2['default'].CONTAINER_SETTINGSUPDATE);
+	    }
+	  }, {
+	    key: 'highDefinitionUpdate',
+	    value: function highDefinitionUpdate() {
+	      this.trigger(_baseEvents2['default'].CONTAINER_HIGHDEFINITIONUPDATE);
+	    }
+	  }, {
+	    key: 'isHighDefinitionInUse',
+	    value: function isHighDefinitionInUse() {
+	      return this.playback.isHighDefinitionInUse();
+	    }
+	  }, {
+>>>>>>> master-upstream
 	    key: 'disableMediaControl',
 	    value: function disableMediaControl() {
 	      this.mediaControlDisabled = true;
@@ -8643,9 +9463,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _baseEvents2 = _interopRequireDefault(_baseEvents);
 
 	var _baseKibo = __webpack_require__(8);
+<<<<<<< HEAD
 
 	var _baseKibo2 = _interopRequireDefault(_baseKibo);
 
+=======
+
+	var _baseKibo2 = _interopRequireDefault(_baseKibo);
+
+>>>>>>> master-upstream
 	var _baseStyler = __webpack_require__(15);
 
 	var _baseStyler2 = _interopRequireDefault(_baseStyler);
@@ -9266,6 +10092,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'destroy',
 	    value: function destroy() {
+	      this.remove();
 	      (0, _clapprZepto2['default'])(document).unbind('mouseup', this.stopDragHandler);
 	      (0, _clapprZepto2['default'])(document).unbind('mousemove', this.updateDragHandler);
 	      this.unbindKeyEvents();
@@ -9750,8 +10577,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _pluginsFavicon2 = _interopRequireDefault(_pluginsFavicon);
 
+	/**
+	 * It keeps a list of the default plugins (playback, container, core) and it merges external plugins with its internals.
+	 * @class Loader
+	 * @constructor
+	 * @extends BaseObject
+	 * @module components
+	 */
+
 	var Loader = (function (_BaseObject) {
 	  _inherits(Loader, _BaseObject);
+
+	  /**
+	   * it builds the loader
+	   * @method constructor
+	   * @param {Object} externalPlugins the external plugins
+	   * @param {Number} playerId you can embed multiple instances of clappr, therefore this is the unique id of each one.
+	   */
 
 	  function Loader(externalPlugins, playerId) {
 	    _classCallCheck(this, Loader);
@@ -14037,7 +14879,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x2, _x3, _x4) { var _again = true; _function: while (_again) { var object = _x2, property = _x3, receiver = _x4; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x2 = parent; _x3 = property; _x4 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -14254,6 +15096,118 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.el.playerSetCapLevelonFPSDrop(this.capLevelonFpsDrop);
 	      this.el.playerSetSmoothAutoSwitchonFPSDrop(this.smoothAutoSwitchonFpsDrop);
 	      this.el.playerSetFpsDroppedMonitoringPeriod(this.fpsDroppedMonitoringPeriod);
+	      this.el.playerSetFpsDroppedMonitoringThreshold(this.fpsDroppedMonitoringThreshold);
+	    }
+	  }, {
+	    key: 'setFlushLiveUrlCache',
+	    value: function setFlushLiveUrlCache(flushLiveURLCache) {
+	      this.flushLiveURLCache = flushLiveURLCache;
+	      this.el.playerSetflushLiveURLCache(this.flushLiveURLCache);
+	    }
+	  }, {
+	    key: 'setCapLeveltoStage',
+	    value: function setCapLeveltoStage(capLevelToStage) {
+	      this.capLevelToStage = capLevelToStage;
+	      this.el.playerCapLeveltoStage(this.capLevelToStage);
+	    }
+	  }, {
+	    key: 'setMaxBufferLength',
+	    value: function setMaxBufferLength(maxBufferLength) {
+	      this.maxBufferLength = maxBufferLength;
+	      this.el.playerSetmaxBufferLength(this.maxBufferLength);
+	    }
+	  }, {
+	    key: 'setUseHardwareVideoDecoder',
+	    value: function setUseHardwareVideoDecoder(useHardwareVideoDecoder) {
+	      this.useHardwareVideoDecoder = useHardwareVideoDecoder;
+	      this.el.playerSetUseHardwareVideoDecoder(this.useHardwareVideoDecoder);
+	    }
+	  }, {
+	    key: 'setHlsLogEnabled',
+	    value: function setHlsLogEnabled(hlsLogEnabled) {
+	      this.hlsLogEnabled = hlsLogEnabled;
+	      this.el.playerSetLogInfo(this.hlsLogEnabled);
+	    }
+	  }, {
+	    key: 'setSeekMode',
+	    value: function setSeekMode(seekMode) {
+	      this.seekMode = seekMode;
+	      this.el.playerSetSeekMode(this.seekMode);
+	    }
+	  }, {
+	    key: 'setStartFromBitrate',
+	    value: (function (_setStartFromBitrate) {
+	      function setStartFromBitrate(_x) {
+	        return _setStartFromBitrate.apply(this, arguments);
+	      }
+
+	      setStartFromBitrate.toString = function () {
+	        return _setStartFromBitrate.toString();
+	      };
+
+	      return setStartFromBitrate;
+	    })(function (startFromBitrate) {
+	      this.startFromBitrate = setStartFromBitrate;
+	      this.el.playerSetStartFromBitrate(this.startFromBitrate);
+	    })
+	  }, {
+	    key: 'setStartFromLevel',
+	    value: function setStartFromLevel(startFromLevel) {
+	      this.startFromLevel = startFromLevel;
+	      this.el.playerSetstartFromLevel(this.startFromLevel);
+	    }
+	  }, {
+	    key: 'setKeyLoadMaxRetry',
+	    value: function setKeyLoadMaxRetry(keyLoadMaxRetry) {
+	      this.keyLoadMaxRetry = keyLoadMaxRetry;
+	      this.el.playerSetKeyLoadMaxRetry(this.keyLoadMaxRetry);
+	    }
+	  }, {
+	    key: 'setKeyLoadMaxRetryTimeout',
+	    value: function setKeyLoadMaxRetryTimeout(keyLoadMaxRetryTimeout) {
+	      this.keyLoadMaxRetryTimeout = keyLoadMaxRetryTimeout;
+	      this.el.playerSetKeyLoadMaxRetryTimeout(this.keyLoadMaxRetryTimeout);
+	    }
+	  }, {
+	    key: 'setFragmentLoadMaxRetry',
+	    value: function setFragmentLoadMaxRetry(fragmentLoadMaxRetry) {
+	      this.fragmentLoadMaxRetry = fragmentLoadMaxRetry;
+	      this.el.playerSetFragmentLoadMaxRetry(this.fragmentLoadMaxRetry);
+	    }
+	  }, {
+	    key: 'setFragmentLoadMaxRetryTimeout',
+	    value: function setFragmentLoadMaxRetryTimeout(fragmentLoadMaxRetryTimeout) {
+	      this.fragmentLoadMaxRetryTimeout = fragmentLoadMaxRetryTimeout;
+	      this.el.playerSetFragmentLoadMaxRetryTimeout(this.fragmentLoadMaxRetryTimeout);
+	    }
+	  }, {
+	    key: 'setFragmentLoadSkipAfterMaxRetry',
+	    value: function setFragmentLoadSkipAfterMaxRetry(fragmentLoadSkipAfterMaxRetry) {
+	      this.fragmentLoadSkipAfterMaxRetry = fragmentLoadSkipAfterMaxRetry;
+	      this.el.playerSetFragmentLoadSkipAfterMaxRetry(this.fragmentLoadSkipAfterMaxRetry);
+	    }
+	  }, {
+	    key: 'setCapLevelonFPSDrop',
+	    value: function setCapLevelonFPSDrop(capLevelonFpsDrop) {
+	      this.capLevelonFpsDrop = capLevelonFpsDrop;
+	      this.el.playerSetCapLevelonFPSDrop(this.capLevelonFpsDrop);
+	    }
+	  }, {
+	    key: 'setSmoothAutoSwitchonFPSDrop',
+	    value: function setSmoothAutoSwitchonFPSDrop(smoothAutoSwitchonFpsDrop) {
+	      this.smoothAutoSwitchonFpsDrop = smoothAutoSwitchonFpsDrop;
+	      this.el.playerSetSmoothAutoSwitchonFPSDrop(this.smoothAutoSwitchonFpsDrop);
+	    }
+	  }, {
+	    key: 'setFpsDroppedMonitoringPeriod',
+	    value: function setFpsDroppedMonitoringPeriod(fpsDroppedMonitoringPeriod) {
+	      this.fpsDroppedMonitoringPeriod = fpsDroppedMonitoringPeriod;
+	      this.el.playerSetFpsDroppedMonitoringPeriod(this.fpsDroppedMonitoringPeriod);
+	    }
+	  }, {
+	    key: 'setFpsDroppedMonitoringThreshold',
+	    value: function setFpsDroppedMonitoringThreshold(fpsDroppedMonitoringThreshold) {
+	      this.fpsDroppedMonitoringThreshold = fpsDroppedMonitoringThreshold;
 	      this.el.playerSetFpsDroppedMonitoringThreshold(this.fpsDroppedMonitoringThreshold);
 	    }
 	  }, {
@@ -14731,13 +15685,21 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 110 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "  <param name=\"movie\" value=\"<%= swfPath %>?inline=1\">\r\n  <param name=\"quality\" value=\"autohigh\">\r\n  <param name=\"swliveconnect\" value=\"true\">\r\n  <param name=\"allowScriptAccess\" value=\"always\">\r\n  <param name=\"bgcolor\" value=\"#001122\">\r\n  <param name=\"allowFullScreen\" value=\"false\">\r\n  <param name=\"wmode\" value=\"transparent\">\r\n  <param name=\"tabindex\" value=\"1\">\r\n  <param name=FlashVars value=\"playbackId=<%= playbackId %>&callback=<%= callbackName %>\" />\r\n  <embed\r\n    name=\"<%= cid %>\"\r\n    type=\"application/x-shockwave-flash\"\r\n    tabindex=\"1\"\r\n    enablecontextmenu=\"false\"\r\n    allowScriptAccess=\"always\"\r\n    quality=\"autohigh\"\r\n    pluginspage=\"http://www.macromedia.com/go/getflashplayer\"\r\n    wmode=\"transparent\"\r\n    swliveconnect=\"true\"\r\n    type=\"application/x-shockwave-flash\"\r\n    allowfullscreen=\"false\"\r\n    bgcolor=\"#000000\"\r\n    FlashVars=\"playbackId=<%= playbackId %>&callback=<%= callbackName %>\"\r\n    src=\"<%= swfPath %>\"\r\n    width=\"100%\"\r\n    height=\"100%\">\r\n  </embed>\r\n";
+=======
+	module.exports = "  <param name=\"movie\" value=\"<%= swfPath %>?inline=1\">\n  <param name=\"quality\" value=\"autohigh\">\n  <param name=\"swliveconnect\" value=\"true\">\n  <param name=\"allowScriptAccess\" value=\"always\">\n  <param name=\"bgcolor\" value=\"#001122\">\n  <param name=\"allowFullScreen\" value=\"false\">\n  <param name=\"wmode\" value=\"transparent\">\n  <param name=\"tabindex\" value=\"1\">\n  <param name=FlashVars value=\"playbackId=<%= playbackId %>&callback=<%= callbackName %>\" />\n  <embed\n    name=\"<%= cid %>\"\n    type=\"application/x-shockwave-flash\"\n    tabindex=\"1\"\n    enablecontextmenu=\"false\"\n    allowScriptAccess=\"always\"\n    quality=\"autohigh\"\n    pluginspage=\"http://www.macromedia.com/go/getflashplayer\"\n    wmode=\"transparent\"\n    swliveconnect=\"true\"\n    type=\"application/x-shockwave-flash\"\n    allowfullscreen=\"false\"\n    bgcolor=\"#000000\"\n    FlashVars=\"playbackId=<%= playbackId %>&callback=<%= callbackName %>\"\n    src=\"<%= swfPath %>\"\n    width=\"100%\"\n    height=\"100%\">\n  </embed>\n";
+>>>>>>> master-upstream
 
 /***/ },
 /* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	module.exports = __webpack_require__.p + "HLSPlayer.swf"
+=======
+	module.exports = __webpack_require__.p + "26c91a360cb2551841d5eb2aff058449.swf"
+>>>>>>> master-upstream
 
 /***/ },
 /* 112 */

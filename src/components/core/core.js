@@ -2,11 +2,6 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-/**
- * The Core is responsible to manage Containers, the mediator, MediaControl
- * and the player state.
- */
-
 import {isNumber,Fullscreen, requestAnimationFrame, cancelAnimationFrame} from 'base/utils'
 
 import Events from 'base/events'
@@ -24,6 +19,14 @@ import $ from 'clappr-zepto'
 
 import coreStyle from './public/style.scss'
 
+/**
+ * The Core is responsible to manage Containers, the mediator, MediaControl
+ * and the player state.
+ * @class Core
+ * @constructor
+ * @extends UIObject
+ * @module components
+ */
 export default class Core extends UIObject {
   get events() {
     return {
@@ -225,6 +228,10 @@ export default class Core extends UIObject {
       return this.containers[0]
     }
     return this.mediaControl.container
+  }
+
+  getCurrentPlayback() {
+    return this.getCurrentContainer().playback
   }
 
   getPlaybackType() {

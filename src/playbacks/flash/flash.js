@@ -4,25 +4,19 @@
 
 import {seekStringToSeconds} from 'base/utils'
 
-import Playback from 'base/playback'
-import Styler from 'base/styler'
+import BaseFlashPlayback from 'playbacks/base_flash_playback'
 import Browser from 'components/browser'
 import Mediator from 'components/mediator'
 import template from 'base/template'
 import $ from 'clappr-zepto'
 import Events from 'base/events'
-import flashStyle from './public/style.scss'
-import flashHTML from './public/flash_playback.html'
 import flashSwf from './public/Player.swf'
 
 var MAX_ATTEMPTS = 60
 
-var objectIE = '<object type="application/x-shockwave-flash" id="<%= cid %>" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" data-flash-vod=""><param name="movie" value="<%= swfPath %>"> <param name="quality" value="autohigh"> <param name="swliveconnect" value="true"> <param name="allowScriptAccess" value="always"> <param name="bgcolor" value="#001122"> <param name="allowFullScreen" value="false"> <param name="wmode" value="gpu"> <param name="tabindex" value="1"> <param name=FlashVars value="playbackId=<%= playbackId %>" /> </object>'
-
-export default class Flash extends Playback {
+export default class Flash extends BaseFlashPlayback {
   get name() { return 'flash' }
-  get tagName() { return 'object' }
-  get template() { return template(flashHTML) }
+  get swfPath() { return template(flashSwf)({baseUrl: this.baseUrl}) }
 
   constructor(options) {
     super(options)
@@ -72,12 +66,6 @@ export default class Flash extends Playback {
 
   getPlaybackType() {
     return 'vod'
-  }
-
-  setupFirefox() {
-    var $el = this.$('embed')
-    $el.attr('data-flash', '')
-    this.setElement($el[0])
   }
 
   isHighDefinitionInUse() {
@@ -207,23 +195,6 @@ export default class Flash extends Playback {
     clearInterval(this.bootstrapId)
     super.stopListening()
     this.$el.remove()
-  }
-
-  setupIE(swfPath) {
-    this.setElement($(template(objectIE)({ cid: this.cid, swfPath: swfPath, baseUrl: this.baseUrl, playbackId: this.uniqueId })))
-  }
-
-  render() {
-    var style = Styler.getStyleFor(flashStyle)
-    var swfPath = template(flashSwf)({baseUrl: this.baseUrl})
-    this.$el.html(this.template({ cid: this.cid, swfPath: swfPath, baseUrl: this.baseUrl, playbackId: this.uniqueId }))
-    if(Browser.isFirefox) {
-      this.setupFirefox()
-    } else if(Browser.isLegacyIE) {
-      this.setupIE(swfPath)
-    }
-    this.$el.append(style)
-    return this
   }
 }
 

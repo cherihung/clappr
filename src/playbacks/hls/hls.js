@@ -2,37 +2,21 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import Playback from 'base/playback'
+import BaseFlashPlayback from 'playbacks/base_flash_playback'
 import Events from 'base/events'
-import Styler from 'base/styler'
 import template from 'base/template'
 import Mediator from 'components/mediator'
 import Browser from 'components/browser'
 import HLSEvents from './flashls_events'
-import hlsStyle from './public/style.scss'
-import hlsHTML from './public/hls_playback.html'
 import hlsSwf from './public/HLSPlayer.swf'
 
 import assign from 'lodash.assign'
-import $ from 'clappr-zepto'
 
 var MAX_ATTEMPTS = 60
 
-var objectIE = '<object type="application/x-shockwave-flash" id="<%= cid %>" class="hls-playback" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" data-hls="" width="100%" height="100%"><param name="movie" value="<%= swfPath %>"> <param name="quality" value="autohigh"> <param name="swliveconnect" value="true"> <param name="allowScriptAccess" value="always"> <param name="bgcolor" value="#001122"> <param name="allowFullScreen" value="false"> <param name="wmode" value="transparent"> <param name="tabindex" value="1"> <param name=FlashVars value="playbackId=<%= playbackId %>&callback=<%= callbackName %>" /> </object>'
-
-export default class HLS extends Playback {
+export default class HLS extends BaseFlashPlayback {
   get name() { return 'hls' }
-  get tagName() { return 'object' }
-  get template() { return template(hlsHTML) }
-  get attributes() {
-    return {
-      'class': 'hls-playback',
-      'data-hls': '',
-      'type': 'application/x-shockwave-flash',
-      'width': '100%',
-      'height': '100%'
-    }
-  }
+  get swfPath() { return template(hlsSwf)({baseUrl: this.baseUrl}) }
 
   constructor(options) {
     super(options)
@@ -41,6 +25,7 @@ export default class HLS extends Playback {
     this.initHlsParameters(options)
     this.highDefinition = false
     this.autoPlay = options.autoPlay
+    this.loop = options.loop
     this.defaultSettings = {
       left: ["playstop"],
       default: ['seekbar'],
@@ -55,7 +40,7 @@ export default class HLS extends Playback {
   initHlsParameters(options) {
     this.flushLiveURLCache = (options.flushLiveURLCache === undefined) ? true : options.flushLiveURLCache
     this.capLevelToStage = (options.capLevelToStage === undefined) ? false : options.capLevelToStage
-    this.useHardwareVideoDecoder = (options.useHardwareVideoDecoder === undefined) ? false : options.useHardwareVideoDecoder
+    this.useHardwareVideoDecoder = (options.useHardwareVideoDecoder === undefined) ? true : options.useHardwareVideoDecoder
     this.maxBufferLength = (options.maxBufferLength === undefined) ? 120 : options.maxBufferLength
     this.seekMode = (options.seekMode === undefined) ? "ACCURATE" : options.seekMode
     this.startFromLevel = (options.startFromLevel === undefined) ? -1 : options.startFromLevel
@@ -303,9 +288,15 @@ export default class HLS extends Playback {
       }
       this.updateCurrentState(state)
     } else if (state === "IDLE") {
-      this.updateCurrentState(state)
-      this.trigger(Events.PLAYBACK_TIMEUPDATE, 0, this.el.getDuration(), this.name)
-      this.trigger(Events.PLAYBACK_ENDED, this.name)
+      this.srcLoaded = false
+      if (this.loop && ["PLAYING_BUFFERING", "PLAYING"].indexOf(this.currentState) >= 0) {
+        this.play()
+        this.seek(0)
+      } else {
+        this.updateCurrentState(state)
+        this.trigger(Events.PLAYBACK_TIMEUPDATE, 0, this.el.getDuration(), this.name)
+        this.trigger(Events.PLAYBACK_ENDED, this.name)
+      }
     }
   }
 
@@ -379,6 +370,7 @@ export default class HLS extends Playback {
   }
 
   stop() {
+    this.srcLoaded = false
     this.el.playerStop()
     this.trigger(Events.PLAYBACK_TIMEUPDATE, 0, this.name)
   }
@@ -449,16 +441,6 @@ export default class HLS extends Playback {
     this.$el.remove()
   }
 
-  setupFirefox() {
-    var $el = this.$('embed')
-    $el.attr('data-hls', '')
-    this.setElement($el)
-  }
-
-  setupIE(swfPath) {
-    this.setElement($(template(objectIE)({cid: this.cid, swfPath: swfPath, baseUrl: this.baseUrl, playbackId: this.uniqueId, callbackName: `window.Clappr.flashlsCallbacks.${this.cid}`})))
-  }
-
   updateSettings() {
     this.settings = assign({}, this.defaultSettings)
     if (this.playbackType === "vod" || this.dvrInUse) {
@@ -470,11 +452,6 @@ export default class HLS extends Playback {
     } else {
       this.settings.seekEnabled = false
     }
-  }
-
-  setElement(element) {
-    this.$el = element
-    this.el = element[0]
   }
 
   createCallbacks() {
@@ -491,21 +468,8 @@ export default class HLS extends Playback {
   }
 
   render() {
-    var style = Styler.getStyleFor(hlsStyle)
-    var swfPath = template(hlsSwf)({baseUrl: this.baseUrl})
-    if(Browser.isLegacyIE) {
-      this.setupIE(swfPath)
-    } else {
-      this.createCallbacks()
-      this.$el.html(this.template({cid: this.cid, swfPath: swfPath, baseUrl: this.baseUrl, playbackId: this.uniqueId, callbackName: `window.Clappr.flashlsCallbacks.${this.cid}`}))
-      if(Browser.isFirefox) {
-        this.setupFirefox()
-      } else if (Browser.isIE) {
-        this.$('embed').remove()
-      }
-    }
-    this.el.id = this.cid
-    this.$el.append(style)
+    super.render()
+    this.createCallbacks()
     return this
   }
 }
